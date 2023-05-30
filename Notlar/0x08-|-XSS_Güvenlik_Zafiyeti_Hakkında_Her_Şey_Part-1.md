@@ -57,9 +57,10 @@ Browser tarafına bunun data olarak kullanılması gerekirken, tag olarak kullan
 ![9](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/51d9ac18-43c5-4765-9985-6fe8eab3f496)
 - %0a new line demek
 ## Google XSS
-- Blockquote içinde script çalıştıramayacağın için svg tagini dene. Olmazsa img denersin.
+- 2.Challenge Blockquote içinde script çalıştıramayacağın için svg tagini dene. Olmazsa img denersin.
 ![10](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/94cc6588-cdbd-47c7-9a74-be3ae5745b18)
-- Kullanıcının inputunu şu şekilde tutuyor —> inputa  = ’-alert(1)-’ yazdığında tetiklenecektir.
+---
+- 4.Challenge Kullanıcının inputunu şu şekilde tutuyor —> inputa  = ’-alert(1)-’ yazdığında tetiklenecektir.
 - HTTP içerisindeki + ifadeleri özellikle Query Stringde HTTP’nin ilk satırını GET’in bozduğu için boşluğu encode etmek gerek, + kullanmıyoruz da - kullanıyoruz.
 ![11](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/30e9027d-7b13-43fb-bced-8c1a2c5447b4)
 -----
