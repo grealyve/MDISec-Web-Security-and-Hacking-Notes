@@ -52,7 +52,7 @@
 - @ den sonrasını parse etse, whitelist hatası verecek zaten.
 - ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/867d2742-10a7-4b4d-828e-2d4974bb293d)
 - Buna fuzzing yapıyormuş reis. Ama Parser kızdı zaten. Sitede, altındaki tabloda fuzzingi göstermiş zaten
-- ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e8d2bf2-6881-4911-86fe-4e3a3e7df803)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e8d2bf2-6881-4911-86fe-4e3a3e7df803)
 - Double encoding yaptı / işaretine ve oldu.
   - Payload, 127.0.0.1:80/admin@stock…..
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/1a371af7-920f-4db3-94a8-fcf92a98eef6)
@@ -74,4 +74,4 @@
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/50cf111e-21ba-4eb3-a129-2584745b9cea)
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/ffefce34-8ddb-4662-9a77-e69f4f6bdc9e)
 - 127.0.0.1 den sonra / koymayınca işler değişiyor:
-- ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/b1ac0c62-11ca-48c6-8e2f-140e41d68965)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/b1ac0c62-11ca-48c6-8e2f-140e41d68965)
