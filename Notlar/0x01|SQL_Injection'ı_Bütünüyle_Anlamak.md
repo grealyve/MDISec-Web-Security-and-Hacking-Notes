@@ -24,7 +24,7 @@
 - SQL injectionda gönderdiğin data, arka tarafta SQL sorgusu olarak gidiyor. Data, data olarak kalırsa sorun çözülmüş olur.
 
 - ORM uygulama denir buna. Prepare statement deniyor buna. İnputları parametrelendirmek yani.
-![AAaaaa](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/18f973a7-e5cf-4a86-b87e-34a5c9da5a0a)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/223883df-681b-4e37-9026-2c1e34fe39b3)
 
 ```SQL
 database() --> mevcut database ismini döndürür
