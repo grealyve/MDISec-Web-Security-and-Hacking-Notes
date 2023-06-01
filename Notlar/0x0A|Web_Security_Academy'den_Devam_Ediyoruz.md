@@ -3,7 +3,7 @@
 Bu link üzerinden PortSwigger'ın hazırladığı [*SQLi Cheat Sheet*](https://portswigger.net/web-security/sql-injection/cheat-sheet)'e ulaşabilirsiniz.
 
 ## Lab: SQL injection UNION attack, retrieving data from other tables
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/b8f35545-0a63-4664-86a6-34e50518321a)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/4c57a4ac-6b70-44a8-9d4b-c937c5995c6c)
 - Buna bakarak: SQL query’sinden dönen datanın ekranda print edilmesi senin için bir zaafiyet durumunda UNION ile daha kolay çözebileceğin anlamına gelir.
 - MYSQL ve Postgresql de karşılaşılan tırnak hadisesi.
 ```
