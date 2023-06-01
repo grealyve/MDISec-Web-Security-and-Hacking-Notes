@@ -22,10 +22,11 @@
 
 ## Bir IP ile Konuşmak
 - Ip adresinin 80 portuna TCP SYN paketi yolluyor üçlü el sıkışma tamamlanıyor...
+```
 SYN —>
     <— SYN + ACK
 ACK —>
-
+```
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e39b107-2cd6-4e9c-92d2-fae4b61b8f0f)
 - Şimdi artık HTTP yollayabilirsin. 1 HTTP GET ve response aldığında aşşağıdaki katmanlarda 150 tane istek gidip geldiğini görebilirsin ve bu da HTTP’nin boktanlığından kaynaklanır.
 
