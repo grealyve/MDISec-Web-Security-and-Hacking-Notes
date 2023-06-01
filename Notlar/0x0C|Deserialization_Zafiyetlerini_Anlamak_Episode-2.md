@@ -3,12 +3,12 @@
 #### Deserialization için kullanabileceğiniz bir browser eklentisi: Cookie Quick Manager
 
 - Import ettiği classları da oluşturabilir hale geliyoruz.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a4cf46d9-f4ec-4929-ae5e-1d908f57230b)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/c58c8df7-fbe3-48a8-a15b-5941e92b9492)
 - Yazılım aslında “is_admin” değerini int olarak kullanırken sen diyorsun ki bu bir obje. Permission objesini de alıp başka bir objeye point ettirebilirsin.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0af79155-8877-415e-ad9e-b07859752964)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/98a4ebb2-be57-4dd8-afa1-e8e47a9ac90e)
 - Bir objenin propertie’lerini başka bir sınıfa point ettirmek :  property oriented programming
 - İçinde wakeup, destruct bulunduran sınıfları kullanarak mesela cache sınfları dosya içine yazma işini yapar
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/90b52c7d-d925-436e-af37-17054328e972)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/47f26045-2ff0-4d18-b311-baf02af0787e)
 - Permission’a da git bunu kullan dersin ve backdoor’u kaparsın.
 [No-CMS CodeIgniter Encryption Vulnerability Exploit](https://www.youtube.com/watch?v=YYsisTQcxls)
 
@@ -20,7 +20,7 @@ yolladı isteği. Sessionı kopyalayıp amelece bütün isteklere yapıştırıp
 - https://medium.com/swlh/php-type-juggling-vulnerabilities-3e28c4ed5c09
 - Kullanıcıdan gelen access_token ı if karşılaştırmasına sokuyor. If comparasion da loose type check olduğu için phpde, zaafiyet çıkıyor.
 - 3 tane = koymazsan string ile int karşılaştırdığında True dönüyor mesela kafayı yiyor php.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f036a7ce-946e-44aa-a87d-0b76775a35f6)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/991bb550-28d7-4e44-9e20-cfe61223749e)
 - access_token’ı 0 yapıyor sonra encode edip yollayınca gerisi geliyor.
 
 #### Kralından okuyabileceğin bazı makaleler:
