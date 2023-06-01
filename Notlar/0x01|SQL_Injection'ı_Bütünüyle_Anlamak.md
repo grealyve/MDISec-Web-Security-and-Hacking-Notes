@@ -65,8 +65,8 @@ DROP DATABASE;
 - Database tablolarına veri eklerken trim(boşlukları silme) işlemi yapmazken, veriyi çekerken trim yapıyor.
 
 - SQL Injection kod örnekleri:
-![1](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/d7f4bb63-1cb6-421a-af77-3b086c2132a5)
-![2](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a553e307-5cea-4525-8232-fe8c61b54b2b)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/7325c682-bc1c-40be-821f-fbf499c0b7cf)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/8ef456c1-9521-4dd8-ad54-9849f2212e4b)
 
 ## UNION SQLi
 
