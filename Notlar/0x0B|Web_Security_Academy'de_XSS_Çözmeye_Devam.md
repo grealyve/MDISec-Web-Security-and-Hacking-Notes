@@ -7,4 +7,4 @@ head, body oluşturmasan bile Browser senin yerine oluşturuyor.
 - new line karakteri varmış gibi devam ediyor sonra < işareti görüyor ama data yok gidiyor boş bir attribute bu diyor.
 - peşinden html benim için bir attribute diyor onu da attribute olarak ekliyor sonra kapatıyor.
 - sonra bakıyor html kapanmamış, svg kapatıyor, bodyi kapatıyor, htmli kapatıyor.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e7109ad-c6f1-4212-b7b2-0ebef257bed8)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/21de8d5d-2b3e-4a5b-820b-eabd7a5fd38a)
