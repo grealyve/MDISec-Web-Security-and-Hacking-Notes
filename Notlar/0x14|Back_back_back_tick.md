@@ -5,7 +5,7 @@
 ## Lab: Excessive trust in client-side controls
 - Senin 100$’ın var bu ürünü sepetine ekleyebiliyorsun, fakirlikle yüzleşiyormuşsun, ürünü silebiliyormuşsun.
 - Ürünü sepete ekle dediğimizde giden request şu:
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/52710f8e-5721-4139-a34d-ac9cd87fe6c4)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5c1a289a-8c23-461a-b939-cd8a61e8548d)
 - Nomalde price DB’de bulunan bir değerdir, enayiler son kullanıcıdan alıyor. ProductID’yi alırsın, quantityi alırsın yeter.
 - 100 dolar yazdı oraya, 1.00$ olarak gitti ama. Demek ki sondaki 2 haneyi . dan sonra kabul ediyor.
 - Order tamamlandı.
@@ -21,18 +21,18 @@
 - Tekrar her şeyi sıfıradı ve terkardan ekledi ceketi. Bu sefer quantitye önce sakfhgja yazdı hata aldı sonra, 00 yazdı hata almadı 302 Found ama sepet boştu.
 - Quantity’e 1,00 yazdı hata verdi. Sonra 1 yazdı(normal değeri) Content-Lenght: 0 döndü. Tekrar yaptı 2 tane sepette oldu. Sonra negatif sayıda denedi o da oldu. -3 tane var, place order yaptı ama total price 0’dan aşşağı olamaz diye hata verdi
 - Sonra gitti farklı ürün koydu sepete pozitif olsun diye.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/43018ef9-9dff-4aa5-90ec-14404b54f297)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5e73ed7b-2c51-4615-a42a-8108bcf12220)
 - Satın al deyince satın aldı. Ama lab çözülmedi - miktarını tam tersi üründen yapmak lazım.
 ## Lab: Low-level logic flaw
 - Gitti ceketi ekledi, giden paketi inceledi.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a57bc9e1-897e-4aa1-9da4-d04b0fc13dde)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/84e6bd06-7a3d-45da-9349-c07e0c82900b)
 - Kupon eklemeyi denedi. Hazır kupon formatlarına bakıyor.
 - Sonra sıfırdan gitti -1 tane ceket eklemeyi denedi 302 found ama eklemiyor. 1 tane ekledi, sonra -1 tane ekledi elde var 0, tekrardan -1 ekle dediğinde yine eklemedi. 1 tane varken direkt -3 ekle dediğnide yine olmadı.
 - Şöyle bir sıkıntı varsa zaten SQL injectiona gidiyor mevzu
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/cc79795c-6e8e-4bef-b5c5-c31e011539fc)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/6af7fa94-f3ac-4fac-888b-c468e8679a28)
 - Max kaç tane sepete ekleyebiliyor onu denedi. 00 denedi.
 - Yeni bir parametre ekledi backend bunu umursamayacak, bu sayıyı 1’den 100000e kadar arttıracak birer birer.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/20f92feb-1122-4ff9-bf58-4b9ef01984d5)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/46136a05-0e28-487c-ab95-c2f3c52e7dbd)
 - F5 atınca para kısmı bir artıyor bi eksiye düşüyor. Aynı isteği sürekli atıyor sürekli 99 tane eklenmiş oluyor. Eksideyken place order denedi ama para - olduğu için hata verdi.
 - Marketten gidip başka en pahalı eşya için aynısını yaptı.  Sonra place order paketi için de aynısını yaptı.
 - Bu sayılar integer değerinde çıkmazsa overflow olduğu için negatif bir değer ortaya çıkıyor.
