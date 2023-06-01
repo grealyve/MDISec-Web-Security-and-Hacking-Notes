@@ -3,38 +3,39 @@
 #### eval her zaman sıkıntı bir fonksiyondur, bu fonksiyonun parametresinde kullanıcının kontrol edebildiği hiçbir şey olmamalıdır.
 # Kod Analizi
 ## Command Injection
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/7af9f79f-d8fb-4f8b-aefb-0266ba8969ac)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5efb6748-6332-42b8-a473-f5e6a1b5838a)
 - .Net yazılımı bu, IntallPackage dediğinde aklına işletim sistemi üzerinde bir paket kurulumu olacak bu da arkada background proccess oluşturacak, directorylere bir şeyler yazılacak.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/8d9b0660-f44a-49f4-a2f9-6baba300f38d)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/227c2c0e-6790-4362-8b2b-50e0b3075e70)
+
 - Burada Command Injection zafiyeti var. Process’in Argüman’ına string concatenation yapılıyor Argüman passing yapılmamış durumda.
 ## Code evalution
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/961a1e06-ebcd-4031-8801-4708624e0ac8)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f8d6e5d9-d4b0-4a4b-8ebc-552920fccfd4)
 - Bu input alanı genelde HTML oluyor. HTML templating var fonksiyonun ismi o zaten.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/27863e50-28d9-46c9-a293-d7453732eb37)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5319bad6-fbed-4aa4-acee-bbfbe056e7ab)
 - Code evalution zafiyeti var burda. Eval fonk. parametresini son kullanıcı değiştirebilir burda oynamalar yapabilir.
 ## SQL injection
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/82a4ba9f-4271-4378-b94e-8d6f752edb33)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/d99c1246-b013-4f58-9b19-bf6001cbc6c0)
 - Bu kısım kıllandırıyormuş:
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0e471a08-0f61-467e-92f4-6c94eb145ad1)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/1bc2caa9-42dc-4816-a2cd-35e2b5c50c6f)
 - “nodeParm” kodu genel olarak incelediğinde, GET ve POST requestleri ile birlikte gelen ve userın kontrol edebildiği bir parametre.
 - Java kodu olduğu için, Java’da sqlRestriction kodunu gidip okuduğunda SQLi’dan kaçınman için gereken bir fonksiyon. “sqlRestriction” fonksiyonu virgülden sonraki nodeParmValue gibi parametreleri kontrol eder. Fakat burada “nodeParameterName” query template’dir ve kullanıcı manipüle edebildiği için SQL injection çıkar.
 ### NOT: if else kısımlarını okumazmış, neyi trace edeceğine bakar eğer o parametre if else te geçiyorsa bakarmış.
 ## KeySize
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/22d1088d-ef1e-4b48-b8c5-4f8370ec5a04)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/2dde179c-21ac-42ad-b6ce-b63a2d2aaf85)
 - Burada yönetilebilen parametre tokendır. Direkt token’a odaklandır reis. Token’ı manipüle edemiyorsa okumazmış.
 - KeySize sen gidip 4096 yazdığında gidip değiştirmezmiş. Setter ve getter lar ile değiştirmek lazım diyor.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/ab7bc6e7-45b9-4ac8-9462-af20d33a85e0)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/7a81694a-3332-452b-a219-fe987343eb25)
 ## Local File Inclusion(LFI)
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/6aeb20aa-8ebe-4ba3-8809-af3d6ca9b3b8)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/aa6f3e10-61a8-46ac-a86a-679ea83f1cd6)
 - Regex gördüğün anda şüphe uyandırır.
 - require_once dediğin anda burada Local File Inclusion vaar.
 - cookie ile bir şeyler geliyor. Regexi kontrol ettiğinde 46-122 arası karakterleri yasaklamış ama işte $ ile başlayan bir şey koyarak yine LFI yapılabilirmiş.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/210e5abf-0618-48f4-a0c3-9001fb7e02b3)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/1f66155a-7323-4805-bd91-7616aa737b8c)
 ```sh
 $../../../../../../../../etc
 ```
 ## XXE
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/494ec36e-d8fd-4b8d-a8b4-0273675a894d)
+
 - XXE varmış burda
     - .odt dosyası
 - SAXBuilder ile aşağıda dox.getContent çalışınca, content.xml ‘i parse ediyor ve DTD lerin disable edilmesi yokmuş.
