@@ -2,13 +2,13 @@
 
 ## XML Nedir?
 - Bir datayı export ederken ,structural tuttuğun bir veriyi, başka bir ortama taşırken kullandığın yapı formatı. (Web app olur)Servislerin ve programların veri alışverişinde kullandığı ortak bir dil. Günümüzün JSON’ı gibi.
-![1](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/49d850fe-61ba-4216-bc22-809a88584a30)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/37423fd1-038c-4cfa-b3cf-7cbee0b85bfa)
 - Uygulamaya dış dünyadan gelen veriler “*input*” ise başka bir web app.den gelen data da “input” tur.
     - XML’i aldığında parse etmesi lazım. Input validation için de parse etmesi lazım.
     - Bizim hedeflediğimiz kısım ise programlama dilinin parsing yaptığı kısım ve an.
 - Bir uygulama XML input alıyorsa her zaman XXE’ye dokunur.
 - Adam XML verisini SQL sorgusunda kullanıyor ise, SQLi aramaya devam et.
-![2](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/b526fa7b-30ee-4ebb-949c-347404a92715)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/fc138d1e-94e3-4642-8db8-9344ec22d0f2)
 - XML’i parse edip DB’ye kaydedip, o verileri sana başka bir ekranda sunuyor ise burada Stored XSS bakabilirsin.
 - XML için class oluşturur gibi DOCUMENT type oluşturuyorsun:
 - DATABASEin tablosuna göre bir formatta yapı oluşturmuş oluyorsun.
@@ -69,29 +69,29 @@ XML example:
 #### Web application senden XML requestini aldıktan ne yapıyor çokomelli!!! SQL sorgusu mu yapıyor başka bir şey mi yapıyor??
 
 - Syntaxı bozarak error vermesini sağla, erroru geri dnüyor ise istediğin içeriği bu error’un içnide getirt. Error based SQLi gibi.
-![3](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/e8d1a190-c86a-467c-be70-06af61819e07)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0a75aa97-ffce-4314-9859-5599f46ee15c)
 < Bu şekilde hata verecektir
 - 2 yazan yere askfaskhjfasjk yazsan bile hatada sana bunu döndürdüğü için hackleyebildin.
 
 - <!DOCTYPE note [<!ENTITY writer SYSTEM "file:///etc/passwd"]>
-![4](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/27b87dd9-86a7-44a6-9606-604e1c0f9c21)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0b77b7ae-19ee-4bab-a716-a291ff861c77)
 - <!DOCTYPE note [<!ENTITY writer SYSTEM "http://127.0.0.1:9002/"]>
     - Sunucu üstünde çalışan Elastic Searche http isteği ürettirebiliyorsun. SSRF zaafiyeti ortaya çıkıyor.
 - http://169.254.169.254/latest/metadata  —> EC2 lar bu URL’e erişim imkanına sahip. Burada EC2’nun kritik bilgileri yatıyor. AWS kendi otomatik cevap dönüyor buradan.
 - <!DOCTYPE note [<!ENTITY writer SYSTEM "http://127.0.0.1:9002/"]>
     - Sunucu üstünde çalışan Elastic Searche http isteği ürettirebiliyorsun. SSRF zaafiyeti ortaya çıkıyor.
 - http://169.254.169.254/latest/metadata  —> EC2 lar bu URL’e erişim imkanına sahip. Burada EC2’nun kritik bilgileri yatıyor. AWS kendi otomatik cevap dönüyor buradan.
-![5](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5a24666d-fd50-4be4-bdf6-96f17ce81506)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/de8bb36e-8710-4537-b7b2-b278aa65f67f)
 - x.com’a gitse istek atsa ve oradan gelen cevap da XML olsa ve Web app. bunu işlemeye devam etse…
 - txt yerine xml dosyası okuttuğunda <> işaretlerini tag olarak algılayacak ve hata verir muhtemelen. Encode özelliği olmadığı için encode da yapamazsın.
 
 ## XXE Out of Band
 - x.com/test.dtd ’ye istek atıyor. x.com da bu web app.a istek atıyor ama 2 tane entity var.
-![6](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/e69856bb-3403-4b47-96b5-041d29022612)
-![7](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/4db33b89-c9c7-420d-8621-c9f8d48dbf99)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/05a71c5e-b883-44d8-b183-3c9a8c9b1978)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/056b3e27-de56-4169-915e-e0da406ebf2d)
 settings.xml dosyasını “payl” değişkenine koyacak.
 alttaki entityde tekarar x.com’a istek gönderecek parametresi de az önceki xlm dosyası olacak.
-![8](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/29d1e133-b6a3-4f1f-be90-4c6643f36249)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/478385bf-7be0-45b4-863f-6d96cd2f2e39)
 XXE yi tespit etmek için şu satır yeterli. Burp collabrator client oluşşturdu onun URL’
 
 #### Ekstra Notlar:
