@@ -26,14 +26,14 @@ SYN —>
     <— SYN + ACK
 ACK —>
 
-![1](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/c7c4695a-5a95-4bf1-ae83-ac2591d6a3b4)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e39b107-2cd6-4e9c-92d2-fae4b61b8f0f)
 - Şimdi artık HTTP yollayabilirsin. 1 HTTP GET ve response aldığında aşşağıdaki katmanlarda 150 tane istek gidip geldiğini görebilirsin ve bu da HTTP’nin boktanlığından kaynaklanır.
 
 ## Virtual Hosting (VHOST)
 - Domain sayısı ip sayısını geçtiği için böyle bir şey ortaya çıkmış.
 - Host firmasının konfigürasyonuna göre hangi siteye gidiyorsan sana /var/www/… sitesine yönlendirir.
-![2](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/6455b18b-aa86-46e9-9e3a-b21a44a3c298)
-![3](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/e12a51f1-0cc9-485c-ba19-b2995c85669c)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/41ed88da-da31-470e-b527-ddf077bf9eeb)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e675dff-f89b-44c6-bfb5-df8df554ac7e)
 - Web app. sayısı artarsa ve gelen requestleri dağıtmak için ön tarafa reverse proxy(LOAD BALANCER) konursa içeride sessionu sunucu ile senkronize etmen gerekecek. Yani diskte tutulmaması gerekiyor DB’de tutulabilir.
     - DB içinde tutulmasının da dezavantajları var. Yük ve performans konusu devreye giriyor.
     - Birden fazla DB varsa SQL Proxy gerektiriyor. Bunun da yerini Mikroservisler alıyor(?)
