@@ -5,7 +5,7 @@
 - HTTP’nin en büyük eksikliklerinden biri karşındakini doğrulayamıyor olman.
 - HTTP’nin diğer en büyük eksikliği State/Stateless durumları.
 - HTTP’de önemli bilgiler “header” kısmında gider; host, cookie, bağlantının devamı gibi… Body kısmında data gider.
-![1](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/4801502d-ca58-4a88-beda-c895913a6c81)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/faba6055-2cd8-4b15-a356-a71b563ba059)
 - Her paket gittiğinde kullanıcı adı ve parola istememesi için cookie yöntemi kullanılıyor.
 
 ## Cookie Mekanizması Nasıl Çalışıyor?
@@ -13,7 +13,7 @@
     - **Protokol**
     - **Domain(subdomain dahil değil yani değişse cookie düşer)**
     - **Port**
-![2](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/4cf52833-df92-4661-a4bd-762e0acc7f3f)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/300c981f-4ef8-4066-9d5b-50443fcb65eb)
 - path : Bu cookie’nin hangi sınırlar içinde kullanalıabileceğini belirler.
 - Cookie değeri senin “session”a ulaşman için gerekli anahtar. Cookie’yi alan Reverse Proxy senin hangi sunucuya(1,2,3)’e gitmen gerektiğini yönlendirmesini yapıyor.
 
@@ -41,11 +41,11 @@
     - Bu mevzunun geliştirilmiş hikayeleri var : Openid, OAuth aynı mantık üzerinde ama farklı şekilde çalışıyor.
 ## CSRF (Crosss Site Request Forgery) Zaafiyeti
 1.Tab içinde 18.132.45.78 sitesinde login olmuş kullanıcı var | 2.Tab’da hacker.com açık.
-![3](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/79e4b29a-8ad9-4655-ad2d-6ffd56ca9e78)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/1adf8a18-2f7b-4b6e-9e3f-477d2a69f6f8)
 - hacker.com’a gittiğinde bu resmi yüklemek için o http isteğini göndermek zorunda. O webb sitesine GET talebi gönderiyor, browser da Cookie’yi otomatikman ekliyor.Domain, protokol ve port koşulları sağlandığı için Cookie buraya da set edilecek.
 - Browser, kullanıcının bu talebi isteyerek mi oluşturduğunu anlamak zorunda.
     - CSRF token oluşturup sunucuya göndermesi gerekiyor.
-![4](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/1d33b33b-5e33-4c6b-b237-e72c12206865)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/4e295702-a989-4fad-9721-b1dc34928a12)
 - Bu token bu session’a özel üretir.
 - Bu tokenı http://18.132.45.78/address/delete/17/?_token=alskhfasuklhfasjlfasjdhask 
 
@@ -53,5 +53,5 @@
     - Session nerede tutuluyorsa orada tutulur. Fakat token’ı illaki sessionda tutmak zorunda değilsin. User’ın kendi Cookie’sinde de tutabilirsin.
 - REST API kullanılırsa?
     - Cookie diye bir şey olmaz. Origin diye bir şey olur. Doğası gereği CSRF zaafiye olamaz burda.
-![5](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/b7cd572c-2e99-4ae6-830a-84665a14c97c)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/ae0bbfac-ba4f-4b2a-a976-ad4e29a19bad)
 Autharization diye bir header’ın olacak, oturum anahtarını burada taşıyacaksın
