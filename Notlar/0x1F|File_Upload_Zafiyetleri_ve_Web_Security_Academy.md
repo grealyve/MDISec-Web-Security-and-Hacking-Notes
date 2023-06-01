@@ -25,23 +25,23 @@
 - Sunucuda komut çalıştıran shell execler yapmaktansa bu dosyanın içeriğini okuyan kod yazarız.
 - Backend tarafına Content-Disposition headerı gitmesi lazım ki bunun bir file upload olduğunu anlasın.
   - Altında da contentini falan yazmış
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5dacfb3f-ed79-4429-bc29-6e9e431b3273)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/483d5c6c-a63e-4d94-902b-15727a92d2f5)
 - Burada dosyanın pathini bulmak gibi bir sıkıntı çıkar.
   - Bu labda direkt vermiş pathi burp interceptionu kapatınca gelen sayfadan okundu: The file avatar/test.php has been uploaded.
 - My account kısmından resime ters tıklayıp copy adres dedikten sonra bu sayfaya gidince dosyanın içeriği de gelmiş oluyor. Bu sayede tam pathi öğrenmiş olduk : /files/avatars/test.php
   - Ayrıca bizden aldığı dosyanın adını aynı şekilde değiştirmeden saklıyor.
 - Sonra dosya yüklediğimiz istek üstünde aşağıdaki değişiklikleri yaparak farklı bir dosya yüklüyoruz.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/8796c486-cb9e-41bf-9f56-7a04cb6167c0)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/8088cb0d-bfb4-4b61-a944-2621b5003d5c)
 ## Lab: Web shell upload via Content-Type restriction bypass
 - Browser HTTP isteğini sunucuya gönderirken requestin içerisine dosyanın tipi bilgisini yazar. Bu bilgiyi browser, dosyanın magic bytelarına bakarak kendi karar verir. Sunucu da bu bilgiye %100 güvenir ise geçmiş ola.
 - Dosya yükleme isteği üstünde değişiklikler yaptı, Content-Type kısmını image/jpeg yazdı. Ayrıca aynı php kodunu tekrar yazdı.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/fe9c83b7-5f81-4049-9c10-dce234c2ba05)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/27848fc7-52f4-4e26-9a61-128972159a6a)
 - /files/avatars/test.php pathine gidince flagin geldiği gözüküyor.
 ## Lab: Web shell upload via path traversal
 - Nginx kuralı olarak hiçbir .php dosyası falan kaydettirmeme kuralı oluşturulabilir ve dosya adını bizden aldığının aynısını kaydettiğini biliyoruz bu yüzden dosyanın başına ../ koyunca bir üst dizine gidip kaydedecektir. Fakat bu lab için olmadı.
 - Bu kuralı aşmanın diğer bir yöntemi ise bu kuralı bypass edecek .htaccess dosyası yüklemektir. Ön taraftaki Apache’nin davranışını değiştirebilirsiniz bu şekilde. Avatars pathinin altına .htaccess dosyasını böyle yazdığımızda Apache’nin konfigürasyonu htaccessi overwrite ediyor.
   - Şu şekilde bir konfigürasyon yazıp yolluyorsun ve sonrasında .mdisec uzantılı bir dosya oluşturup içine de php kodu yazdığında aynı şekilde çalışacağını göreceksin.
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/990b6907-0d09-4faf-bd76-4a17fb921a05)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a743b342-8161-4559-b659-2cb94c9eb6bb)
   - Bir de Apache’nin konfigürasyon dosyasında şöyle bir olay da olabilir; dosya uzantısı şu uzantılarla eşleşenleri php ye ver şeklinde bir kural yazmış olabilir.
 - Sonradan şunu kontrol etti; dosya yüklendikten sonra pathini söylediği sayfada “avatars/test.php” şeklinde olduğunu gördü ama bizim payloadın işe yaraması için “avatars/../test.php” şeklinde olması gerekiyordu. Burada bir blacklisting yapılmış olabilir. Tüm slash işaretlerine kızıyor arkadaş.
 - URL encoding yaparak dosyayı yüklediğimizde çalıştı.
