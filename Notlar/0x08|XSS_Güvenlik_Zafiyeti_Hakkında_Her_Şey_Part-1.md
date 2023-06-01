@@ -7,7 +7,7 @@
     - HTML : Senin iskeletindir.
     - JavaScript : Vücudunu hareket ettirmeni sağlar. Biz de hareket kısmıyla ilgileniyoruz.
 - *Response’un içerisinde kontrol edebildiğin bir değişkeni(değerini kendin belirleyebildiğin), browser’a geri gönderilen HTML içeriğin bir kısmında kullanılıyor.*
-![1](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/8713127e-3a56-4e9f-b61f-5e72998a8da1)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3159ec38-3ae3-4ff6-9df9-b32f81f84359)
 - Search kısmı olur, URL’in keywork kısımları olur, input edebildiğin her yer olabilir.
 
 - Browser, gelen HTML’i parse ediyor ve bir tane structure oluşturuyor. JS ile ilgili kısımları JS interpreterine veriyor, CSS kodlarını çalıştırıyor ve ortaya bir tane DOM oluşturmuş oluyor.
@@ -26,7 +26,7 @@ Browser tarafına bunun data olarak kullanılması gerekirken, tag olarak kullan
 - XSS payloadın her zaman response’da yansımaz. Yansıyorsa —> *Reflected XSS*
     - DB’e kaydedilebilir.  Diğer kullanıcılar da bu veriyi DB’den çekip browser da bunu yorumlayınca sömürülebilir.(*Stored XSS*)
     - Başka bir web servisi tarafından alınıp başka bir web application kullanıyor da olabilir.
-![2](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/888e5082-851c-4625-ae89-900af82fe2fd)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0e672841-d238-429b-9e06-90a450a0988e)
 - Browserlar “textarea” içerisindeki scriptleri çalıştırmaz. Senin de bu scripleri nereye yazacağın çok önemli.
     - Saldırı kodunun textarea’yı kapatma ile başlaması gerekiyor.
 - Kendinden başkasına etki ettiremiyorsan *Self XSS* olmuş oluyor
@@ -36,38 +36,38 @@ Browser tarafına bunun data olarak kullanılması gerekirken, tag olarak kullan
 - <> tagların olabilmesi için bu işaretlerin olması gereklidir. Bunlar olmazsa asla XSS yapamazsın.
     - Encode edebilirler &lt; ve &gt; olarak.
 ## Attribute Context
-![3](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/70bde275-8a01-4c28-ac51-b98f6869c7bc)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a861aa0d-e76c-405a-a5b3-f178ea0e41f3)
 - Bu tagin value attribute’unda olduğun için XSS oluşmaz(Mehmet kısmı.)
 - Öncelikle “ koyarak bu attributeun tanımını bitirmelisin. Sonrasında kendi tagini açıp scriptini yazabilirsin.
-![4](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3a176077-2b3a-4bd3-b9f7-7a540719ee38)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/15ceac42-7800-4363-8cac-3b35bede2f2b)
 - Encode edilse bile kendi attribute unu oluşturup script çalıştırabilirsin :
     - <> encode edilmeli VE “ ‘ ` encode edilmeli!!
-![5](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/b8757f62-e8cf-4267-921a-30f617276ea3)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/5cbe533f-a7ea-4f31-9e7b-29fb357580f8)
 #### Not: Internet Exlporer version 8-9’da HTML Parser Engine ` ` bu işareti görünce tag’i sonlandırıyor. 
 ## HREF Context
 - a href içine USER_DATA durum ile karşılaşırsan gidip JS’in browserlarda protocol handler olduğu durumu tetikleyebiliyorsun.
-![6](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f4a2f59d-0764-4413-a6b0-af917af8b163)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/478fa3bb-a215-4cf5-a196-c102bbcc6648)
 ## JSINLINE Context
 - id kısmına alert(1) göndermen yeterli olur XSS tetiklemek için.
     - Her şeyi encode etsen bile bu XSS çalışır. Burada parantezleri encode etmen gerekiyor
-![7](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/046cd8ca-aa2c-460e-9ab8-520fa934cdb0)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/6aba78d3-fa64-42d9-84a0-82ccfd88f1d7)
 ---
-![8](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3edf18d0-7d8a-4afd-a1a9-a7020feb38d9)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/ab4612ea-0467-477d-b264-8043bc66b74a)
 - Burada Asla XSS oluşmaz ama gidip yazılımcı Command line yaparsa işi biter.
-![9](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/51d9ac18-43c5-4765-9985-6fe8eab3f496)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/dad18be3-14c4-448c-b2de-ee07ac4134c5)
 - %0a new line demek
 ## Google XSS
 - 2.Challenge Blockquote içinde script çalıştıramayacağın için svg tagini dene. Olmazsa img denersin.
-![10](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/94cc6588-cdbd-47c7-9a74-be3ae5745b18)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/8213b73a-76aa-480b-8995-0a8cac772012)
 ---
 - 4.Challenge Kullanıcının inputunu şu şekilde tutuyor —> inputa  = ’-alert(1)-’ yazdığında tetiklenecektir.
 - HTTP içerisindeki + ifadeleri özellikle Query Stringde HTTP’nin ilk satırını GET’in bozduğu için boşluğu encode etmek gerek, + kullanmıyoruz da - kullanıyoruz.
-![11](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/30e9027d-7b13-43fb-bced-8c1a2c5447b4)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/fda8dc26-efaa-40a8-82ce-583bf4ea4ed8)
 -----
 - Location hashden bir path alıyor sonra “includeGadget” ile bu pathi yüklüyor. Eğer verilen input http ile başlarsa hata verir. http isteklerini göndermeni engelliyor kod. 
-![12](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/72148484-b37e-4839-8860-ca12b0392960)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f21e2e33-6e06-4423-a0b7-e00b66c17086)
     - data:text/javascript,alert(1)
-![13](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a2ac1aa8-ed6e-4b90-a8d3-be2ec89d5ca6)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/dce770eb-3013-4592-b56d-4096d8441a7f)
 - URL’deki # burada js’in kodu anlamlandırmasını sağlıyor. 
 
 ### Ekstra Notlar:
