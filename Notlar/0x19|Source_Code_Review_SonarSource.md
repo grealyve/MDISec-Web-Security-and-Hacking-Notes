@@ -35,88 +35,88 @@
 $../../../../../../../../etc
 ```
 ## XXE
-
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/d2d1d0b2-6f77-4b4a-8651-76ee104571f3)
 - XXE varmış burda
     - .odt dosyası
 - SAXBuilder ile aşağıda dox.getContent çalışınca, content.xml ‘i parse ediyor ve DTD lerin disable edilmesi yokmuş.
 ## Log Forging Vulnerability
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e0ed137-d43f-4cda-8673-49af5ebf3142)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/d2358258-2a9d-4363-9873-846e507982f8)
 - _create_export bir file oluşturuyo, bid ne işe yarıyor ona  bir bakmak lazım hem input alanı zaten. Bu fonksiyonlar ne iş yapıyor bilemediği için gitti üsttekilere baktı
 - business_id ile log injection yapabiliyorum dedi. Devamını görmek lazım işte…
 - Jsonify outputu content type olarak json verirsen bile, body’i kontrol edebilsen bile browser render ettirtmiyor dedi
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/6c8cd6aa-165a-4b98-9078-77949fe36120)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/22428575-be4b-4d3f-bb31-a878b1ea0032)
 - Line 22’dee geçici log dosyası oluşturuluyor ardından siliniyor, buna injection yapılabilir. Bunu da söyledi
 ## Deserialization
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a94f9101-6a14-4bfd-83ee-a24032dd2b26)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/197bbc6e-a9c9-43b5-b06d-388b0cda1e06)
 - Untrusted source’dan aldığın datayı deserialize ediyosan .Net, Java gibi OOP dillerinde ciddi problem.
 - String’den direkt objeye dönme işi var burda.
 - “textReader” Deserialize ediliyor, bu da zaten input alanında var ayrıca stringi XML ‘e çeviriyor.
 ## XSS
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/ebaa31f2-e386-4c12-b996-030d92ac97e2)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a7f1ddd3-5f66-455e-a775-eb24b3b54d59)
 - $upload_name kısmında XSS varmış.
 - 21. satır upload_name kullanıcıdan alınıyor ama sanitize ediliyor fakat sanitize etmenin hiçbir önemi yok. Burada HTML encoding yapman lazım.
 - 13. satırda echo veriyor burda da XSS varmış
 - Ayrıca 19..satırda upload_name kısmında hiçbir validation yok, burda da File Upload vuln. var.
 ## Arbitrary File Overwrite
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/cd89c1c4-12f6-461e-bdbb-aad88e36ca52)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/cb661dda-96dc-4e9c-9d45-67caa58a71ca)
 - installRepository diyor, bir şeyler yüklenecek.
 - Arbitrary file overwriting
 - mode’u benden alıyor, repHome’u benden alıyor, repHome’u istallConfig’e yolluyor yani “dest” kontrol ediyoruz. Gidip config dosyası üstüne başka dosya yazır falan yani
 ## Regular expression Denial of Service(ReDoS)
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/c247e391-e4b7-481b-95c7-9135f207d964)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/39cd7688-e23a-4f27-a889-477e092bb84e)
 - ReDoS var burda.
 - 36.satırda Regex(search) var.
 - Non-Deterministic Finite Automaton
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/dc6e3348-1f96-4eb3-8d3d-3c7434fe38a8)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/4f956211-91d2-42ce-952c-b7f47a985142)
 - Recursive inner call’a girer bu da DOS’a sebep olur. a ile başlıyor b ile bitmesi gerekiyor, aa ile başlayıp a ile devam ediyor b ile bitiyor…..
 - .Net ile yazılıp NFA kullanan motorlarda bu sebep olabilir.
 ## LDAP Injection
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/fda5ae39-2118-4d1a-ba27-d278d2ff78a6)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/2f0e756c-a4df-419b-86c4-c8564f9ddb8e)
 - LDAP search injection.
 - 28.satırda ldapSearchFiler alıyor, filterın içine atyıor, 33te de ldap_seatch ediyor işte. 30.satıda req ile envvar alıyor.
 ## ZIP Slip
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/c130727e-c2da-47a8-9571-3c981154da25)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/e979a9b3-e2d3-41f9-9b43-d6add49152be)
 - Zip’i decomprise ederken programlama tarafında, çok dikkatli olunmalı. Zip’in içerisindeki syn-linkler ile dosyayı çıkardığında *path traversal check* yapmak lazım
 - Yani içerden ../../../ dosyası falan çıkarsa ne bok yiyecen??
 ## Arbitrary File Deletion
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/51c4268e-abe7-418b-9a50-bb3e8473475b)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/bc809ed3-fa41-489f-9a51-5c4ccc7bd8dc)
 - get_addon_path adından belliymiş
 - gidip token alınıyor, temporarily bir path oluşuyor, bu dosya geçerli mi diye bakılıyor, sonra gidip o siliniyor.
 - Arbitrary file deletion.
 - tmp_token kullaınıcıdan alınıyor ve artık pathi o kontrol ediyor falan…
 ## XSS
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/d7226085-5322-447c-a4b3-d96585941d87)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/751b6bca-54cb-419f-ab92-29cd848bb0b4)
 - XSS var.
 - Html.Raw, Razor template engineinde default context encoding yapmaz. Default contex encodingi HTML ve attribute encoding için yapıyor.
 ##  Command Injection
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/96ac19f0-484a-470c-aa93-7a8eb7ce72f0)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0decf6a2-4723-44d5-bd92-1949a3919d9b)
 - Şu patterni gördüğün zaman renkli hikayeler dönüyor demektir. File’a “name” attribute’u atanması lazım burda da 8.satırda bütün alanlarına koymuş zaten
 ## CORS Bypass
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/b4379195-1af8-4f18-aa13-60c41dea7f0c)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a681f212-1adc-4cf7-bd30-e61d9e1aa528)
 - Cors bypass var:
   - referer header’ı parametre olarak alınıyor
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/67aef83c-3045-4ba9-a05e-98beea9430fe)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/10967471-05b8-4bb1-8b1c-1aab371b5e44)
 - 14.satırda referer değil origin header’ı tarafından check edilmesi lazımmış CORS konusu.
 - Origini kontrol edip spoof edemiyoruz fakat referer’ı kontrol edebiliyoruz
 ## Account Takeover
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/772f1afc-3a9d-4bc2-9c74-06588dda891a)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/68d06b22-ce86-4b4c-bdec-fa93967c0ab5)
 - Account takeover…
   - password reset veya acount oluşturma olayı var  bruda
 - Sana doğrualam epostası geliyor ya, bu token’ı offline olarak hesaplarsam sıkıntı
 - tokenı oluşturma fonksiyonu tahmin edilebilir.
 - CSPRNG
 ## Path Traversal
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f06f88c0-3219-4eab-98fa-90a41c0546ff)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f15a910c-d7e5-47aa-a769-f597e57927a9)
 - \ ile de bakman lazım…
 - image’dan LFI yaparsın akarsın
 ## XPath Injection
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/00414b51-7270-456d-995d-e7540dabd300)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/c1baa1d6-782d-42f0-b9eb-f766c274a42c)
 - Kullaınıcdan alınan inputu direkt olmasa da query kısmına yapıştırıyor.
 - XPath injection
 ## SSRF
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/3e7c914e-af7f-42ee-bd28-a44b64b17473)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/7c9d1aa3-9f2a-494e-adbe-099793fb9a06)
 ## Open Redirect
-![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/7cd22bb5-af11-4c16-b8b9-b9b3e9f2e996)
+![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f7a32fa1-68b5-496c-98df-e66b227de3d8)
 - Django kullanılmış.
 - get_success_url returnüne redirect verilmiş
 - "next"e [google.com](http://google.com) yazarım akarım
