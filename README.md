@@ -37,7 +37,7 @@ Bu repository Mehmet abinin web security oynatma listesindeki videolarını izle
 * [0x19 | Source-Code Review SonarSource #CodeChallenge !](/Notlar/0x19|Source_Code_Review_SonarSource.md)
 * [0x1A | OAuth Zafiyetleri](/Notlar/0x1A|OAuth_Zafiyetleri.md)
 * [0x1B | OAuth Zafiyetleri Reloaded](/Notlar/0x1B|OAuth_Zafiyetleri_Reloaded.md)
-* [0x1C | Web Cache Nedir ? Web cache poisoning zafiyeti](/Notlar/0x1C|Web_Cache_Nedir?Web_cache_poisoning_zafiyeti.md)
+* [0x1C | Web Cache Nedir ? Web cache poisoning zafiyeti](/Notlar/0x1C|Web_Cache_Nedir-Web_cache_poisoning_zafiyeti.md)
 * [0x1D | Burp DOM Invader](/Notlar/0x1D|Burp_DOM_Invader.md)
 * [0x1E | HTTP Request Smuggling ve HTTP/2 Downgrade Attack Zafiyeti](/Notlar/0x1E|HTTP_Request_Smuggling_ve_HTTP2_Downgrade_Attack_Zafiyeti.md)
 * [0x1F | File Upload Zafiyetleri ve Web Security Academy](/Notlar/0x1F|File_Upload_Zafiyetleri_ve_Web_Security_Academy.md)
