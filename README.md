@@ -31,7 +31,7 @@ Bu repository Mehmet abinin web security oynatma listesindeki videolarını izle
 * [0x13 | Host Header Manipulations](/Notlar/0x13|Host_Header_Manipulations.md)
 * [0x14 | Back back back tick ^^](/Notlar/0x14|Back_back_back_tick.md)
 * [0x15 | Yeni Burp Suite 2020.10 ve SSRF Giriş](/Notlar/0x15|Yeni_Burp_Suite_2020.11_ve_SSRF_Giriş.md)
-* [0x16 | Server-Side Request Forgery Nedir ?](/Notlar/0x16|Server-Side_Request_Forgery_Nedir?.md)
+* [0x16 | Server-Side Request Forgery Nedir ?](/Notlar/0x16|Server-Side_Request_Forgery_Nedir.md)
 * [0x17 | Server-Side Template Injection Giriş - 1](/Notlar/0x17|Server-Side_Template_Injection_Giriş-1.md)
 * [0x18 | Directory Traversal ../../etc/passwd](/Notlar/0x18|Directory_Traversal.md)
 * [0x19 | Source-Code Review SonarSource #CodeChallenge !](/Notlar/0x19|Source_Code_Review_SonarSource.md)
