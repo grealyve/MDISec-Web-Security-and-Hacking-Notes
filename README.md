@@ -23,7 +23,7 @@ Bu repository Mehmet abinin web security oynatma listesindeki videolarını izle
 * [0x0C | Deserialization Zafiyetlerini Anlamak Episode 1](/Notlar/0x0C|Deserialization_Zafiyetlerini_Anlamak_Episode-1.md)
 * [0x0C | Deserialization Zafiyetlerini Anlamak Episode 2](/Notlar/0x0C|Deserialization_Zafiyetlerini_Anlamak_Episode-2.md)
 * [0x0D | Deserialization Exploitation](/Notlar/0x0D|Deserialization_Exploitation.md)
-* [0x0E | SSL Temelde Nedir ? HSTS](/Notlar/0x0E|SSL_Temelde_Nedir?HSTS.md)
+* [0x0E | SSL Temelde Nedir ? HSTS](/Notlar/0x0E|SSL_Temelde_Nedir-HSTS.md)
 * [0x0F | OS Command Injection](/Notlar/0x0F|OS_Command_Injection.md)
 * [0x10 | Information Disclosure](/Notlar/0x10|Information_Disclosure.md)
 * [0x11 | Authentication](/Notlar/0x11|Authentication.md)
