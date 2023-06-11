@@ -12,11 +12,11 @@
 * SQLi tespit etmek için URL kısmında şunları dene: 
 ```python
 ..../productid=4'
-	invalid falan verirse
+	herhangi bir hata falan verirse
 ..../productid=4''
-	böylesini dene
+	böylesini dene, eğer referans noktana dönüyorsan SQLi var demektir.
 ..../productid=5-1
-	dene
+	bunu da deneyebilirsin
 ```
 
 ## Notlar
