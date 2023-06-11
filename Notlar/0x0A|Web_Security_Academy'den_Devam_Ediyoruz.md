@@ -28,7 +28,7 @@ mehmetince' UNION SELECT null,null--
 UNION SELECT username,password FROM users--
 	username ve password kısmı lab girişinde söyleniyor.
 ```
-## Lab: SWL injection UNION attack, retrieving multiple values in a single column
+## Lab: SQL injection UNION attack, retrieving multiple values in a single column
 ```sql
 SELECT a,b,c,d FROM x WHERE y = 'Accessories'
 ```
