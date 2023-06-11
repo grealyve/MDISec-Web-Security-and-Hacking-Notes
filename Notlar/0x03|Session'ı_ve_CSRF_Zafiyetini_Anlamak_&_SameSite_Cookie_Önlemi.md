@@ -15,8 +15,8 @@
     - **Port**
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/300c981f-4ef8-4066-9d5b-50443fcb65eb)
 - path : Bu cookie’nin hangi sınırlar içinde kullanalıabileceğini belirler.
-- Cookie değeri senin “session”a ulaşman için gerekli anahtar. Cookie’yi alan Reverse Proxy senin hangi sunucuya(1,2,3)’e gitmen gerektiğini yönlendirmesini yapıyor.
-
+### Cookie değeri senin “session”a ulaşman için gerekli anahtar. Cookie’yi alan Reverse Proxy senin hangi sunucuya(1,2,3)’e gitmen gerektiğini yönlendirmesini yapıyor.
+## Cookie Nerede Saklanır?
 - Cookie oluşturmak adına başlattığın sessionlar /tmp/disk’e yazılır.
     - Session : Cookie’nin bilgilerinin yazıldığı ve tutulduğu bir bilgi topluluğu. %90 sunucu tarafında gerçekleşir yani clientin kendi tarafında değiştirebileceği bir şey değil.
 1) Session oluştuğunda sunucu tarafında diskte tutabilirler ama bu diskte IO işlemine sebep olur. Sistemi yavaşlatır yani.
