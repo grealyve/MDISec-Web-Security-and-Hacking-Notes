@@ -64,6 +64,7 @@ Browser tarafına bunun data olarak kullanılması gerekirken, tag olarak kullan
 - HTTP içerisindeki + ifadeleri özellikle Query Stringde HTTP’nin ilk satırını GET’in bozduğu için boşluğu encode etmek gerek, + kullanmıyoruz da - kullanıyoruz.
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/fda8dc26-efaa-40a8-82ce-583bf4ea4ed8)
 -----
+#### 6.Challenge
 - Location hashden bir path alıyor sonra “includeGadget” ile bu pathi yüklüyor. Eğer verilen input http ile başlarsa hata verir. http isteklerini göndermeni engelliyor kod. 
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/f21e2e33-6e06-4423-a0b7-e00b66c17086)
     - data:text/javascript,alert(1)
