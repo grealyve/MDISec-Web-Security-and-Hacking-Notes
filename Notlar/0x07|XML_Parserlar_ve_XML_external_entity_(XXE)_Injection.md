@@ -76,10 +76,7 @@ XML example:
 - <!DOCTYPE note [<!ENTITY writer SYSTEM "file:///etc/passwd"]>
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/0b77b7ae-19ee-4bab-a716-a291ff861c77)
 - <!DOCTYPE note [<!ENTITY writer SYSTEM "http://127.0.0.1:9002/"]>
-    - Sunucu üstünde çalışan Elastic Searche http isteği ürettirebiliyorsun. SSRF zaafiyeti ortaya çıkıyor.
-- http://169.254.169.254/latest/metadata  —> EC2 lar bu URL’e erişim imkanına sahip. Burada EC2’nun kritik bilgileri yatıyor. AWS kendi otomatik cevap dönüyor buradan.
-- <!DOCTYPE note [<!ENTITY writer SYSTEM "http://127.0.0.1:9002/"]>
-    - Sunucu üstünde çalışan Elastic Searche http isteği ürettirebiliyorsun. SSRF zaafiyeti ortaya çıkıyor.
+- Sunucu üstünde çalışan Elastic Searche http isteği ürettirebiliyorsun. SSRF zaafiyeti ortaya çıkıyor.
 - http://169.254.169.254/latest/metadata  —> EC2 lar bu URL’e erişim imkanına sahip. Burada EC2’nun kritik bilgileri yatıyor. AWS kendi otomatik cevap dönüyor buradan.
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/de8bb36e-8710-4537-b7b2-b278aa65f67f)
 - x.com’a gitse istek atsa ve oradan gelen cevap da XML olsa ve Web app. bunu işlemeye devam etse…
