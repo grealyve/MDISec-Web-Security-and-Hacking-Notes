@@ -7,7 +7,7 @@
 - Oturum anahtarı her zaman authentication ile ilgili bir husustur ve web uygulamalarında authenticationla ilgili ilginç buglar çıkmakta.
 
 
-## Lab: Username enumeration via subtly different responses
+## Lab: Username enumeration via different responses
 - Bilerek yanlış bir login yaparken eğer aldığın hata “Invalid username” ise DB’de bu username var mı yok mu diye kontrol eder, var ise parolayı da alıp if ile karşılaştırıor.
 - Bu yaklaşım yanlış değil. Aldığın username’i, sessiona hangi dataları koyacaksan onları DB’den WHERE clause ile çek, sonra passwordları karşılaştır. Devamında çektiğin dataları da sessiona da yazabilirsin.
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/ee56a718-3e59-41b6-9251-1e9cbd6a4b29)
